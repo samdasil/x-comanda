@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="./style.css" />
+	<link rel="icon" href="x-tuchaua.ico">
+	<title>X-Comanda</title>
+</head>
+<body>
+	<h2>Monte seu pedido no X-Comanda</h2>
+
+	<div class="container">
+
+		<div class="box">
+			<form id="form-order" data-js="products">
+
+				<div class="box-header">
+					<div class="box-line">
+						<label for="header">Mesa</label>
+						<p data-mesa="Marte">Marte</p>
+					</div>
+				</div>
+
+				<div class="items"></div>
+
+				<div class="form-control">
+					<h3>OBSERVAÇÕES</h3>
+				</div>
+				<!-- <div class="form-control">
+					<label for="amount">Valor (R$) :<br /></label>
+					<input type="text" id="text" placeholder="" />
+				</div> -->
+				<div class="form-control">
+					<textarea class="obs" rows="5" cols="50" id="obs"></textarea>
+				</div>
+				<br>
+				<button class="btn">Próximo</button>
+			</form>
+		</div>
+
+		<div class="box none" id="result" >
+			
+			<h3>Confirme seu pedido</h3>
+      
+			<ul id="transactions" class="transactions">
+				<!-- <li class="minus">
+				Salário <span>-$400</span><button class="delete-btn">x</button>
+				</li> -->
+			</ul>
+			
+			<div class="painel">
+				<!-- <div class="inc-exp-container">
+					<div>
+						<h4>Total X-Salada</h4>
+						<p id="xsalada" class="money plus">R$ 0.00</p>
+					</div>
+
+					<div>
+						<h4>Total Refri</h4>
+						<p id="refrigerante" class="money plus">R$ 0.00</p>
+					</div>
+				</div>
+
+				<div class="inc-exp-container">
+					<div>
+						<h5>x-salada + refri</h5>
+						<p id="pagaCombo" class="money plus">R$ 0.00</p>
+					</div>
+
+					<div>
+						<h5>x-salada</h5>
+						<p id="pagaSimples" class="money plus">R$ 0.00</p>
+					</div>
+				</div> -->
+
+				<h4>Valor Final</h4>
+				<hr>
+				<h1 id="balance" class="balance">R$ 0.00</h1>
+				<a class="btn bg-gray" id="recalcular">Voltar</a>
+				<br>
+			</div>
+			
+			<div class="painel">
+				<form action="" id="formCode">
+					<div class="form-control">
+						<label for="text">Code PIX</label>
+						<input type="text" id="codePix" placeholder="xxxxxxxxxxxxx" />
+					</div>
+					<br>
+					<button class="btn" id="btnqrcode">Gerar QRCode</button>
+				</form>
+				
+				<div class="qrcode none">
+					<hr>
+					<img id="qrcode" alt="QRCode"/>
+				</div>
+			</div>
+			
+		</div>
+
+		<div class="up none">
+			<audio src="./iupi.mp3"></audio>
+			<img src="./up_150.png" alt="up">
+		</div>
+		
+	</div>
+
+	<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebChat</title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link type="text/css" href="https://comercialqueiroz.tm2digital.com/chat/api/webchat/css/TRF7u-bhqUn-i4dzI-ZS6tP-ZrmPD.css?v=2.0" rel="stylesheet">
+
+    <style type="text/css">
+        /* .webchat-input:focus {
+            border: 1px solid
+        }
+        .webchat-input-form:focus {
+            border: 1px solid <%= background %> !important;
+        }
+        .webchat-sidebar {
+            background-color: <%= background %> !important;
+        }
+        .webchat-general-container {
+            <%= position %>: 15px;
+        }
+        .webchat-top-container {
+            background-color: <%= background %> !important;
+        }
+        .webchat-title-minimize {
+            color: <%= titleColor %> !important;
+        }
+        .webchat-header-title {
+            color: <%= background %> !important;
+        } */
+    </style>
+
+</head>
+
+<body>
+
+    <div class="webchat-container" id="tm2-webchat-full" style="display: none;">
+        <div class="webchat-body-container" id="webchat-body-container">
+            <div class="webchat-top-container" id="webchat-top-container" onclick="tm2Chat.positionChat()">
+                <div class="webchat-top-icon">
+                    <img src="#" class="webchat-top-logo" id="webchat-logo-top" />
+                </div>
+                <div class="webchat-top-title">
+                    <p class="webchat-top-title-bot" id="webchat-title-bot">#name</p>
+                    <p class="webchat-top-title-description" id="webchat-description-bot">#description</p>
+                </div>
+                <div class="webchat-top-icon-down">
+                    <i class="material-icons">expand_more</i>
+                </div>
+            </div>
+            <div class="webchat-form-content" id="webchat-form-content">
+                <div class="webchat-form-description">
+                    Informe os dados abaixo e inicie o chat
+                </div>
+    
+                <div class="webchat-form-input">
+                    <i class="material-icons webchat-form-icon-input">account_circle</i>
+                    <input type="text" id="chat-bot-user-name-input" class="webchat-input-form" placeholder="Nome">
+                </div>
+    
+                <div class="webchat-form-input" id="webchat-div-phone">
+                        <i class="material-icons webchat-form-icon-input">phone</i>
+                    <input type="tel" id="chat-bot-user-phone-input" class="webchat-input-form" placeholder="Telefone" maxlength="13" onkeydown="return chatHelper.isNumberKey(event)" onkeyup="return chatHelper.regexKeyUp()">
+                    <p class="invalid-error" id="chat-bot-invalid-phone" style="display: none">Telefone inválido</p>
+                </div>
+    
+                <div class="webchat-form-input-email" id="webchat-div-email">
+                        <i class="material-icons webchat-form-icon-input">email</i>
+                    <input type="email" id="chat-bot-user-email-input" class="webchat-input-form" placeholder="Email">
+                    <p class="invalid-error" id="chat-bot-invalid-email" style="display: none">Email inválido</p>
+                </div>
+
+                <button class="webchat-btn-send" onclick="tm2Chat.validateForm()">
+                    <span class="webchat-btn-send-text">Iniciar Chat</span>
+                    <i class="material-icons webchat-btn-send-text-icon">touch_app</i>
+                </button>
+            </div>
+            <div class="webchat-body-message-content" id="webchat-body-message-content">
+                <div id="webchat-typing-container-id" class="webchat-typing-container">
+                    <img id="loading-ico" width="20" height="20">
+                </div>
+
+                <div class="webchat-messages-container-loading" id="webchat-messages-container-loading-id">
+                    <img class="webchat-messages-container-loading-img" id="loading-ico2" width="50">
+                </div>
+            </div>
+    
+            <div class="webchat-body-input-container" id="webchat-body-input-container">
+                <div class="webchat-body-input-content">
+                    <input id="webchatFileInput" type="file" class="webchat-attach-input">
+                    <i class="material-icons webchat-attach-icon" id="webchat-attachment" onclick="tm2Chat.inputFile()">attach_file</i>
+                    <input id="msg-txt" type="text" class="webchat-body-input-content-locale" onkeyup="tm2Chat.enterKeyPress(event)">
+                </div>
+                <div class="webchat-body-input-btn">
+                    <i class="material-icons" id="webchat-send-btn" onclick="tm2Chat.sendUserMessage()">send</i>
+                </div>
+            </div>
+            <div class="webchat-body-close-btn" id="webchat-close-session-active" onclick="tm2Chat.closeSession()">Finalizar chat</div>
+        </div>
+
+        <div class="webchat-minimize-container" id="icon-minimize" onclick="tm2Chat.positionChat()">
+            <i class="material-icons webchat-minimize-icon" id="code-icon-minimize">close</i>
+        </div>
+    
+    </div>
+
+    <div class="webchat-title-container zoomIn" id="webchat-title" onclick="tm2Chat.positionChat()">
+        <div class="webchat-title-icon-active fadeIn" id="webchat-icon-active"></div>
+        <div class="webchat-title-text" id="webchat-title-text">#title</div>
+        <div class="webchat-title-icon" id="webchat-title-logo-locale">
+            <img src="#" id="webchat-logo" class="webchat-title-logo" />
+        </div>
+    </div>
+</body>
+</html>
